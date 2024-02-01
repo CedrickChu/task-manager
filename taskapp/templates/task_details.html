@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2 class='text-center'>Manga Detail</h2>
+
+<nav class='nav' aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'task-list' %}">Task List</a></li>
+    </ol>
+</nav>
+<a class='btn btn-danger' href="{% url 'task-update' task.pk %}">Edit</a>
+<a class='btn btn-danger' href="{% url 'task-delete' task.pk %}">Delete</a>
+<h1>{{ object.title }}</h1>
+    <p><strong>Created By:</strong> {{ object.created_by }}</p>
+    <p><strong>Description:</strong> {{ object.description }}</p>
+    <p><strong>Due Date:</strong> {{ object.due_date }}</p>
+{% endblock %}
